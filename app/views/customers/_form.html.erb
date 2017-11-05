@@ -11,65 +11,91 @@
     </div>
   <% end %>
 
+
+<table class="bookingtable">
+  <tr>
+    <td>
+
+    <br><br>
+    <b>Please enter your contact information:</b>
+    <br><br>
+
   <div class="field">
-    <%= form.label :firstName %>
+    <%= form.label "First Name:" %>
     <%= form.text_field :firstName, id: :customer_firstName %>
   </div>
 
   <div class="field">
-    <%= form.label :middleInitial %>
+    <%= form.label "Middle Initial (Optional):" %>
     <%= form.text_field :middleInitial, id: :customer_middleInitial %>
   </div>
 
   <div class="field">
-    <%= form.label :lastName %>
+    <%= form.label "Last Name:" %>
     <%= form.text_field :lastName, id: :customer_lastName %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label "Your Email:" %>
     <%= form.text_field :email, id: :customer_email %>
   </div>
 
   <div class="field">
-    <%= form.label :phone %>
+    <%= form.label "Your Phone Number:" %>
     <%= form.text_field :phone, id: :customer_phone %>
   </div>
+
+    <br>
+    <b>Please enter your vehicle information:</b>
+    <br><br>
 
     <%= form.fields_for :vehicle do |v_form| %>
 
     <div class="field">
-      <%= v_form.label :make %>
+      <%= v_form.label "Vehicle Make:" %>
       <%= v_form.text_field :make, id: :vehicle_make %>
     </div>
 
     <div class="field">
-      <%= v_form.label :model %>
+      <%= v_form.label "Vehicle Model:" %>
       <%= v_form.text_field :model, id: :vehicle_model %>
     </div>
 
     <div class="field">
-      <%= v_form.label :year %>
+      <%= v_form.label "Vehicle Year:" %>
       <%= v_form.text_field :year, id: :vehicle_year %>
     </div>
 
         <% end %>
 
+    </td>
+    <td id="booking">
+
+    <br><br>
+      <b>Use the calendar below to select an appointment time:</b>
+    <br><br>
+
     <%= form.fields_for :appointment do |app_form| %>
 
     <div class="field">
-      <%= app_form.label :appDate %>
+      <%= app_form.label "Appointment Date/Time (Where Calendar Goes):" %>
       <%= app_form.datetime_select :appDate, id: :appointment_appDate %>
     </div>
-
+    <br>
     <div class="field">
-      <%= app_form.label :description %>
+      <%= app_form.label "Enter a brief description of your problem (120 characters or less):" %>
       <%= app_form.text_field :description, id: :appointment_description %>
     </div>
 
         <% end %>
 
+    </td>
+  </tr>
+</table>
+
+
+<br><br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Book your appointment!" %>
   </div>
 <% end %>

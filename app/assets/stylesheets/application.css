@@ -13,3 +13,70 @@
  *= require_tree .
  *= require_self
  */
+body
+{
+    background-image: url("cg_website-background1.jpg");
+}
+
+.welcome img
+{
+    width: 300px;
+    border: solid;
+    box-shadow: 0px 8px 5px #999999;
+
+}
+
+
+.bookwidth img
+{
+    width: 200px;
+}
+.bookwidth a {
+    background: none;
+}
+
+table.welcometable
+{
+    table-layout: fixed;
+    width: 775px;
+    font-style: italic;
+}
+/*table.welcometable td { overflow: hidden; }*/
+
+#booking
+{
+    vertical-align: top;
+    /*padding-left: 100px;*/
+
+}
+
+table.bookingtable
+{
+    table-layout: fixed;
+    width: 775px;
+
+}
+
+.headerfont h1
+{
+    font-family: futura, sans-serif;
+    font-weight: lighter;
+    white-space: nowrap;
+}
+
+.headerright img
+{
+    width: 100px;
+    margin: 0px 0px 0px 50px;
+    border: solid;
+    box-shadow: 0px 8px 5px #999999;
+
+}
+.headerleft img
+{
+    width: 100px;
+    margin: 0px 50px 0px 0px;
+    border: solid;
+    box-shadow: 0px 8px 5px #999999;
+}
+
