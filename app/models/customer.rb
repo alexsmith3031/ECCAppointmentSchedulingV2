@@ -3,4 +3,6 @@ class Customer < ApplicationRecord
   has_one :appointment, dependent: :destroy
   accepts_nested_attributes_for :appointment
   accepts_nested_attributes_for :vehicle
+
+
 end

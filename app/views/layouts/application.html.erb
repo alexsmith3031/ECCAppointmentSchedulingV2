@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ECC Appointment Booking System</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>ECC Appointment Booking System</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-  <table>
-    <tr>
-      <th><div class="headerleft"><%= image_tag "ecclogo.png" %></div></th>
-      <th><div class="headerfont"><h1>ESCOBEDO'S COLLISION CENTER <br><br>
-        <span style="color: #ff0000">Customer Appointment System</span></h1></div></th>
-      <th><div class="headerright"><%= image_tag "cssteamlogo.png" %></div></th>
-    </tr>
-  </table>
+<body>
+<table>
+  <tr>
+    <th><div class="headerleft"><%= image_tag "ecclogo.png" %></div></th>
+    <th><div class="headerfont"><h1>ESCOBEDO'S COLLISION CENTER <br><br>
+      <span style="color: #ff0000">Customer Appointment System</span></h1></div></th>
+    <th><div class="headerright"><%= image_tag "cssteamlogo.png" %></div></th>
+  </tr>
+</table>
 
-  <br>
-    <%= yield %>
-  </body>
+<br>
+<%= yield %>
+</body>
 </html>

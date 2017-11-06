@@ -15,7 +15,7 @@
   <tbody>
     <% @appointments.each do |appointment| %>
       <tr>
-        <td><%= appointment.appDate %></td>
+        <td><%= appointment.appDate.strftime("%Y-%b-%d  %I:%M %p") %></td>
         <td><%= appointment.description %></td>
         <td><%= appointment.customer.firstName %></td>
         <td><%= link_to 'Show', appointment %></td>

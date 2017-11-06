@@ -74,17 +74,31 @@
     <br><br>
       <b>Use the calendar below to select an appointment time:</b>
     <br><br>
+      <div id="calendar" >
+        <%= month_calendar events: @appointments do |date, appointments| %>
+            <%= date.day %>
 
+            <% appointments.each do |appointment| %>
+                <div>
+                  <%= appointment.appDate.strftime(" %I:%M %p") %>
+
+                </div>
+            <% end %>
+        <% end %>
+
+
+      </div>
     <%= form.fields_for :appointment do |app_form| %>
 
     <div class="field">
       <%= app_form.label "Appointment Date/Time (Where Calendar Goes):" %>
-      <%= app_form.datetime_select :appDate, id: :appointment_appDate %>
+      <%= app_form.datetime_select :appDate, :ampm  => true, :minute_step => 5 , :start_year => 2017, :order => [:year, :month, :day] %>
+    </div>
     </div>
     <br>
     <div class="field">
       <%= app_form.label "Enter a brief description of your problem (120 characters or less):" %>
-      <%= app_form.text_field :description, id: :appointment_description %>
+      <%= app_form.text_area :description, id: :appointment_description %>
     </div>
 
         <% end %>
