@@ -1,0 +1,37 @@
+<%= form_with(model: insurance, local: true) do |form| %>
+  <% if insurance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(insurance.errors.count, "error") %> prohibited this insurance from being saved:</h2>
+
+      <ul>
+      <% insurance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :yesno %>
+    <%= form.check_box :yesno, id: :insurance_yesno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :companyName %>
+    <%= form.text_field :companyName, id: :insurance_companyName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :claimNumber %>
+    <%= form.text_field :claimNumber, id: :insurance_claimNumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_id %>
+    <%= form.text_field :customer_id, id: :insurance_customer_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

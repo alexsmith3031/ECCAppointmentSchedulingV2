@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  yesno: false
+  companyName: MyString
+  claimNumber: MyString
+  customer: one
+
+two:
+  yesno: false
+  companyName: MyString
+  claimNumber: MyString
+  customer: two

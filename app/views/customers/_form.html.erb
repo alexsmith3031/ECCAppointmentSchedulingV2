@@ -69,6 +69,33 @@
 
         <% end %>
 
+      <br>
+      <b>Is this an insurance related claim?</b>
+      <br><br>
+
+      <%= form.fields_for :insurance do |i_form| %>
+
+      <div class="field">
+
+        Yes
+        <%= i_form.radio_button :yesno, "true" %>
+        No
+        <%= i_form.radio_button :yesno, "false" %>
+
+      </div>
+
+      <div class="field">
+        <%= i_form.label "Insurance Company Name (Optional):" %>
+        <%= i_form.text_field :companyName, id: :insurance_companyName %>
+      </div>
+
+      <div class="field">
+        <%= i_form.label "Insurance Claim Number (Optional):" %>
+        <%= i_form.text_field :claimNumber, id: :insurance_claimNumber %>
+      </div>
+
+          <% end %>
+
     </td>
     <td id="booking2">
 

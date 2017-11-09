@@ -18,6 +18,7 @@ class CustomersController < ApplicationController
     @customer = Customer.new
     @customer.build_appointment
     @customer.build_vehicle
+    @customer.build_insurance
     @appointments = Appointment.all
   end
 
@@ -75,6 +76,7 @@ class CustomersController < ApplicationController
     def customer_params
       params.require(:customer).permit(:firstName, :middleInitial, :lastName, :email, :phone,
                                        appointment_attributes:[:appDate, :description],
-                                       vehicle_attributes:[:make,:model,:year])
+                                       vehicle_attributes:[:make,:model,:year],
+                                       insurance_attributes:[:yesno,:companyName,:claimNumber])
     end
 end
