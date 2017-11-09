@@ -43,11 +43,19 @@ table.welcometable
 }
 /*table.welcometable td { overflow: hidden; }*/
 
-#booking
+#booking1
 {
     vertical-align: top;
     /*padding-left: 100px;*/
 
+}
+
+#booking2
+{
+    vertical-align: top;
+    padding-left: 25px;
+
+    border-left: 1px solid #000;
 }
 
 
@@ -55,9 +63,13 @@ table.welcometable
 table.bookingtable
 {
     table-layout: fixed;
-    width: 775px;
+    width: 900px;
+
+
 
 }
+
+.highlightme { background-color: #ff0000; }
 
 .headerfont h1
 {

@@ -13,8 +13,9 @@
 
 
 <table class="bookingtable">
+  <col width="325px" />
   <tr>
-    <td>
+    <td id="booking1">
 
     <br><br>
     <b>Please enter your contact information:</b>
@@ -69,20 +70,20 @@
         <% end %>
 
     </td>
-    <td id="booking">
+    <td id="booking2">
 
     <br><br>
-      <b>Use the calendar below to select an appointment time:</b>
+      <b>Times listed in the calendar below have already been booked:</b>
     <br><br>
-      <div id="calendar" >
-        <%= month_calendar events: @appointments do |date, appointments| %>
-            <%= date.day %>
+        <%= week_calendar events: @appointments do |date, appointments| %>
+            <b><%= date.day %></b>
+            <br>
 
             <% appointments.each do |appointment| %>
-                <div>
-                  <%= appointment.appDate.strftime(" %I:%M %p") %>
 
-                </div>
+                <span class="highlightme"><%= appointment.appDate.strftime(" %I:%M %p") %></span>
+
+
             <% end %>
         <% end %>
 
@@ -91,14 +92,15 @@
     <%= form.fields_for :appointment do |app_form| %>
 
     <div class="field">
-      <%= app_form.label "Appointment Date/Time (Where Calendar Goes):" %>
-      <%= app_form.datetime_select :appDate, :ampm  => true, :minute_step => 5 , :start_year => 2017, :order => [:year, :month, :day] %>
+      <br><b><%= app_form.label "Please select your desired appointment date:" %></b><br>
+      <%= app_form.datetime_select :appDate, :ampm  => true,  :start_year => 2017,
+                                   :start_hour => 8, :end_hour => 17, :minute_step => 60, :order => [:year, :month, :day] %>
     </div>
     </div>
     <br>
     <div class="field">
-      <%= app_form.label "Enter a brief description of your problem (120 characters or less):" %>
-      <%= app_form.text_area :description, id: :appointment_description %>
+      <b><%= app_form.label "Enter a brief description of your problem (120 characters or less):" %></b><br>
+      <%= app_form.text_area :description, id: :appointment_description, :maxlength => 120, :size => "30x5" %>
     </div>
 
         <% end %>
