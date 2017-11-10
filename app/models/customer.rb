@@ -8,11 +8,13 @@ class Customer < ApplicationRecord
 
   validates :email, :firstName, :lastName, presence: true
 
-  validates :phone, :presence => true,
-            length: {minimum: 10, maximum: 15,},
-            format: { with: /\A\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}\z/,
-            message: ('number is not valid')}
+  validates :phone, :presence => true
 
-  validates_format_of :email, :with => /\A[^@,\s]+@[^@,\s]+\.[^@,\s]+\z/
+  validates :phone, length: {minimum: 10, maximum: 15,},
+            format: { with: /\A\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}\z/,
+            message: ('number is not valid')},
+            :allow_blank => true
+
+  validates_format_of :email, :with => /\A[^@,\s]+@[^@,\s]+\.[^@,\s]+\z/, :allow_blank => true
     #validates :email, format: /@/
 end

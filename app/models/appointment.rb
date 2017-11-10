@@ -4,6 +4,8 @@ class Appointment < ApplicationRecord
   validates_uniqueness_of :appDate, scope: [:appDate], message:('is already booked. Please choose a different time')
   validates :appointmentDate, confirmation: true
 
+  validates :description, presence: true
+
   def start_time
     self.appDate ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
   end

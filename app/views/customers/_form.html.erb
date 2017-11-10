@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label "Middle Initial (Optional):" %>
-    <%= form.text_field :middleInitial, id: :customer_middleInitial %>
+    <%= form.text_field :middleInitial, id: :customer_middleInitial, :maxlength => 1 %>
   </div>
 
   <div class="field">
@@ -64,7 +64,7 @@
 
     <div class="field">
       <%= v_form.label "Vehicle Year:" %>
-      <%= v_form.text_field :year, id: :vehicle_year %>
+      <%= v_form.number_field :year, id: :vehicle_year %>
     </div>
 
         <% end %>
@@ -78,19 +78,19 @@
       <div class="field">
 
         Yes
-        <%= i_form.radio_button :yesno, "true" %>
-        No
         <%= i_form.radio_button :yesno, "false" %>
+        No
+        <%= i_form.radio_button :yesno, "true", :checked => true %>
 
       </div>
 
       <div class="field">
-        <%= i_form.label "Insurance Company Name (Optional):" %>
+        <%= i_form.label "Insurance Company Name:" %>
         <%= i_form.text_field :companyName, id: :insurance_companyName %>
       </div>
 
       <div class="field">
-        <%= i_form.label "Insurance Claim Number (Optional):" %>
+        <%= i_form.label "Insurance Claim Number:" %>
         <%= i_form.text_field :claimNumber, id: :insurance_claimNumber %>
       </div>
 

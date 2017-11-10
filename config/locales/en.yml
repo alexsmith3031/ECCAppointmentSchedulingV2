@@ -29,5 +29,49 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+
+
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      customer:
+        firstName: "First name"
+        lastName: "Last name"
+        email: "Email"
+        phone: "Phone number"
+      appointment:
+        appDate: "Appointment date/time"
+      insurance:
+        companyName: "Company name"
+        claimNumber: "Claim number"
+    errors:
+      models:
+        customer:
+          attributes:
+            firstName:
+              blank: "is required."
+            lastName:
+              blank: "is required."
+            email:
+              blank: "is required."
+            phone:
+              blank: "is required."
+        vehicle:
+          attributes:
+            make:
+              blank: "is required."
+            model:
+              blank: "is required."
+            year:
+              blank: "is required."
+        appointment:
+          attributes:
+            description:
+              blank: "is required."
+        insurance:
+          attributes:
+            companyName:
+              blank: "is required if this is an insurance related claim"
+            claimNumber:
+              blank: "is required if this is an insurance related claim"
+
