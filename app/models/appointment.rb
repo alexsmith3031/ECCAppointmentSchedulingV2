@@ -1,7 +1,7 @@
 class Appointment < ApplicationRecord
   belongs_to :customer
 
-  validates_uniqueness_of :customer_id, scope: [:appDate]
+  validates_uniqueness_of :appDate, scope: [:appDate], message:('is already booked. Please choose a different time')
   validates :appointmentDate, confirmation: true
 
   def start_time
@@ -11,8 +11,11 @@ class Appointment < ApplicationRecord
   def appointmentDate
 
     if appDate.present? && appDate <= Date.current
-      errors.add(:date, "cannot be booked before the current date")
+      errors.add(:Date, "cannot be set before the current date")
+    end
     end
   end
-end
+
+
+
 
