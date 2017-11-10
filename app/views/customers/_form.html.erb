@@ -102,17 +102,17 @@
     <br><br>
       <b>Times listed in the calendar below have already been booked:</b>
     <br><br>
-        <%= week_calendar events: @appointments do |date, appointments| %>
-            <b><%= date.day %></b>
-            <br>
+      <%= week_calendar events: @appointments do |date, appointments| %>
+          <b><%= date.day %></b>
+          <br>
 
-            <% appointments.each do |appointment| %>
+          <% appointments.each do |appointment| %>
 
-                <span class="highlightme"><%= appointment.appDate.strftime(" %I:%M %p") %></span>
+              <span class="highlightme"><%= appointment.appDate.strftime(" %I:%M %p") %></span>
 
 
-            <% end %>
-        <% end %>
+          <% end %>
+      <% end %>
 
 
       </div>

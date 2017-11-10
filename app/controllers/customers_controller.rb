@@ -24,6 +24,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/1/edit
   def edit
+    @appointments = Appointment.all
   end
 
   # POST /customers
