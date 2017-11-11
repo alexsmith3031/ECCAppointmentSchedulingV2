@@ -1,7 +1,5 @@
 class CustomersController < ApplicationController
-
-  #http_basic_authenticate_with :name => "admin", :password => "password"
-
+  before_action :authorize, only: :index
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   # GET /customers
@@ -28,6 +26,7 @@ class CustomersController < ApplicationController
   # GET /customers/1/edit
   def edit
     @appointments = Appointment.all
+
   end
 
   # POST /customers

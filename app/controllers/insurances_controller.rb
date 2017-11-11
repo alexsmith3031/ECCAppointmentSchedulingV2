@@ -15,10 +15,12 @@ class InsurancesController < ApplicationController
   # GET /insurances/new
   def new
     @insurance = Insurance.new
+
   end
 
   # GET /insurances/1/edit
   def edit
+
   end
 
   # POST /insurances
