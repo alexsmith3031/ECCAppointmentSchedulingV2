@@ -9,6 +9,12 @@
 </head>
 
 <body>
+<div class="'login">
+<% if current_user %>
+    Signed in as <%= current_user.employee_name %> | <%= link_to "Logout", '/logout' %>
+<% else %>
+    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+<% end %></div>
 <table>
   <tr>
     <th><div class="headerleft"><%= image_tag "ecclogo.png" %></div></th>
@@ -19,6 +25,8 @@
 </table>
 
 <br>
+
+
 <%= yield %>
 </body>
 </html>
