@@ -1,39 +1,31 @@
-<p id="notice"><%= notice %></p>
+<h2>Your appointment has been booked!</h2>
+<hr>
 
 <p>
-  <strong>Firstname:</strong>
-  <%= @customer.firstName %>
+  Thank you <strong><%= @customer.firstName %> <%= @customer.middleInitial %> <%= @customer.lastName %></strong>,
+  your appointment has been booked for <b><%= @customer.appointment.appDate.strftime("%B %-d, %Y at %I:%M %p") %></b>
 </p>
 
 <p>
-  <strong>Middleinitial:</strong>
-  <%= @customer.middleInitial %>
-</p>
+  <h3>Your itinerary:</h3>
+  <p>
+  Email: <b><%= @customer.email %></b>
+  <br>
+  Phone: <b><%= @customer.phone %></b>
+  <br>
+  Vehicle: <b><%= @customer.vehicle.make %> <%= @customer.vehicle.model %> <%= @customer.vehicle.year %></b>
+  <br><br>
+    Issue described:<br>
+    <b><%= @customer.appointment.description %></b>
+  <br><br>
+  Insurance Company: <b><%= @customer.insurance.companyName %></b>
+  <br>
+  Insurance Claim #: <b><%= @customer.insurance.claimNumber %></b>
+  </p>
 
+
+<br><br>
+<hr>
+<strong>Does something look wrong? <%= link_to 'Click here to go back.', edit_customer_path(@customer) %></strong>
 <p>
-  <strong>Lastname:</strong>
-  <%= @customer.lastName %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @customer.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @customer.phone %>
-</p>
-
-<p>
-  <strong>Appdate:</strong>
-  <%= @customer.appointment.appDate %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @customer.appointment.description %>
-</p>
-
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to 'Return to Homepage', welcome_index_path %>
