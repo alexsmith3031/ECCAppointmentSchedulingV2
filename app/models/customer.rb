@@ -1,4 +1,5 @@
 class Customer < ApplicationRecord
+
   has_one :vehicle, dependent: :destroy
   has_one :appointment, dependent: :destroy
   has_one :insurance, dependent: :destroy
@@ -17,4 +18,5 @@ class Customer < ApplicationRecord
 
   validates_format_of :email, :with => /\A[^@,\s]+@[^@,\s]+\.[^@,\s]+\z/, :allow_blank => true
     #validates :email, format: /@/
+
 end
