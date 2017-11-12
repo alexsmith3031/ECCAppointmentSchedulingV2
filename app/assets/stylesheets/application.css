@@ -93,6 +93,12 @@ table.bookingtable
     box-shadow: 0px 8px 5px #999999;
 }
 
+.headerleft a
+{
+    background: none;
+}
+
+
 
 tr.indexPage:nth-child(even) {background-color: #DADADA}
 tr.indexPage:nth-child(odd) {background-color: lightblue}

@@ -44,6 +44,8 @@ en:
       insurance:
         companyName: "Company name"
         claimNumber: "Claim number"
+      user:
+        employee_name: "Employee name"
     errors:
       models:
         customer:
@@ -74,4 +76,8 @@ en:
               blank: "is required if this is an insurance related claim"
             claimNumber:
               blank: "is required if this is an insurance related claim"
+        user:
+          attributes:
+            employee_name:
+              blank:  "is required."
 

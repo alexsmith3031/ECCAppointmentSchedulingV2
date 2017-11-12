@@ -1,9 +1,15 @@
 <h1>Employee Login</h1>
 
 <%= form_tag '/login' do %>
-
-    Name: <%= text_field_tag :employee_name %>
-    Password: <%= password_field_tag :password %>
+<hr><br>
+    Name:
+    <br>
+    <%= text_field_tag :name %>
+    <br><br>
+    Password:
+    <br>
+    <%= password_field_tag :password %>
+    <br><br>
     <%= submit_tag "Submit" %>
 
 <% end %>

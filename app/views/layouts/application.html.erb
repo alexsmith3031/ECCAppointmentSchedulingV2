@@ -9,15 +9,19 @@
 </head>
 
 <body>
+
 <div class="'login">
 <% if current_user %>
-    Signed in as <%= current_user.employee_name %> | <%= link_to "Logout", '/logout' %>
+    You are currently signed in <%= current_user.employee_name %> | <%= link_to "Logout", '/logout' %>
 <% else %>
-    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+    <%= link_to 'Employee Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %></div>
+
+<br>
+
 <table>
   <tr>
-    <th><div class="headerleft"><%= image_tag "ecclogo.png" %></div></th>
+    <th><div class="headerleft"><%= link_to (image_tag "ecclogo.png"), welcome_index_path %></div></th>
     <th><div class="headerfont"><h1>ESCOBEDO'S COLLISION CENTER <br><br>
       <span style="color: #ff0000">Customer Appointment System</span></h1></div></th>
     <th><div class="headerright"><%= image_tag "cssteamlogo.png" %></div></th>

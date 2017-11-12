@@ -1,10 +1,20 @@
 <h1>Employee sign up</h1>
 
 <%= form_for :user, url: '/users' do |f| %>
-
-    Name: <%= f.text_field :name %>
-    Password: <%= f.password_field :password %>
-    Password Confirmation: <%= f.password_field :password_confirmation %>
+<hr>
+    <br>
+    Username:
+    <br>
+    <%= f.text_field :name %>
+    <br><br>
+    Password:
+    <br>
+    <%= f.password_field :password %>
+    <br><br>
+    Password Confirmation:
+    <br>
+    <%= f.password_field :password_confirmation %>
+    <br><br>
     <%= f.submit "Submit" %>
 
 <% end %>
