@@ -1,3 +1,16 @@
+<% if current_user %>
+<h2>Appointment Details for <%= @customer.firstName %> <%= @customer.middleInitial %> <%= @customer.lastName %></h2>
+<hr>
+
+<p>
+  <strong><%= @customer.firstName %> <%= @customer.middleInitial %> <%= @customer.lastName %></strong>,
+  has an appointment booked for <b><%= @customer.appointment.appDate.strftime("%B %-d, %Y at %I:%M %p") %></b>
+</p>
+
+<p>
+
+  <h3>Itinerary:</h3>
+<% else %>
 <h2>Your appointment has been booked!</h2>
 <hr>
 
@@ -8,6 +21,7 @@
 
 <p>
   <h3>Your itinerary:</h3>
+  <% end %>
   <p>
   Email: <b><%= @customer.email %></b>
   <br>
@@ -23,9 +37,12 @@
   Insurance Claim #: <b><%= @customer.insurance.claimNumber %></b>
   </p>
 
-
 <br><br>
 <hr>
-<strong>Does something look wrong? <%= link_to 'Click here to go back.', edit_customer_path(@customer) %></strong>
+<% if current_user %>
+<strong><%= link_to 'Appointment Management Page', Customer %></strong>
+<% else %>
+<% end %>
+
 <p>
 <%= link_to 'Return to Homepage', welcome_index_path %>

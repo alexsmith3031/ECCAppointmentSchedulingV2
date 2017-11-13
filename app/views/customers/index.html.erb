@@ -1,5 +1,7 @@
 <h1>Appointment Management</h1>
 
+<div id="table-wrapper">
+  <div id="table-scroll">
 <table>
   <thead>
     <tr>
@@ -24,12 +26,14 @@
         <td><%= customer.insurance.companyName %> <%= customer.insurance.claimNumber %></td>
         <td><%= customer.appointment.appDate.strftime("%B %-d, %Y at %I:%M %p") %></td>
         <td><%= customer.appointment.description %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'View', customer %></td>
         <td><%= link_to 'Delete', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+  </div>
+</div>
 
 <br>
 
