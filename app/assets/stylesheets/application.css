@@ -129,3 +129,15 @@ tr.indexPage:nth-child(odd) {background-color: lightblue}
     width:35%;
     border:1px solid red;
 }
+
+.report img {
+    width: 50px;
+}
+.report a {
+    background: none;
+}
+
+.print img {
+    width: 25px;
+}
+

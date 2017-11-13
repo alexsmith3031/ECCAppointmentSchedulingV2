@@ -1,0 +1,47 @@
+<%= form_with(model: report, local: true) do |form| %>
+  <% if report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
+
+      <ul>
+      <% report.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <br>
+
+  <div class="field">
+    <div class="bootstrap">
+      <div class="container">
+        <div class="row">
+          <div class='col-sm-6'>
+            <div class="form-group">
+              <div class='input-group date' id='datetimepicker1'>
+                <%= form.text_field :dateQuery, id: :report_dateQuery, class: "form-control" %>
+                <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript">
+              $(function () {
+                  $('#datetimepicker1').datetimepicker(
+                      {widgetPositioning: {vertical: 'bottom'},
+                          format: 'YYYY-MM-DD' }
+
+                  );
+              });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Generate Report" %>
+  </div>
+<% end %>

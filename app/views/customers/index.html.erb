@@ -1,5 +1,7 @@
 <h1>Appointment Management</h1>
 
+<hr>
+
 <div id="table-wrapper">
   <div id="table-scroll">
 <table>
@@ -35,6 +37,18 @@
   </div>
 </div>
 
+<br>
+<table>
+  <td>
+<b><i>Click here to generate a report: </i></b>
+  </td>
+  <td>
+    <div class="report">
+  <%= link_to (image_tag "report-icon.gif"), new_report_path %>
+    </div>
+  </td>
+</table>
+<hr>
 <br>
 
 <b><i>Booking for a customer? <%= link_to 'Click here.', new_customer_path %></i></b>
