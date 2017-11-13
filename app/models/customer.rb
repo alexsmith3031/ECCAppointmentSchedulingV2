@@ -11,9 +11,13 @@ class Customer < ApplicationRecord
 
   validates :phone, :presence => true
 
+  validates_format_of :firstName, :middleInitial, :lastName, :with => /\A[a-z]+\z/i,
+  message: (' cannot include numeric digits or special characters'),
+  :allow_blank => true
+
   validates :phone, length: {minimum: 10, maximum: 15,},
             format: { with: /\A\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}\z/,
-            message: ('number is not valid')},
+            message: (' is not valid')},
             :allow_blank => true
 
   validates_format_of :email, :with => /\A[^@,\s]+@[^@,\s]+\.[^@,\s]+\z/, :allow_blank => true

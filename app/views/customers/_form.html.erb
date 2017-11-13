@@ -115,15 +115,45 @@
       <% end %>
 
 
-      </div>
+
+
     <%= form.fields_for :appointment do |app_form| %>
 
     <div class="field">
-      <br><b><%= app_form.label "Please select your desired appointment date:" %></b><br>
-      <%= app_form.datetime_select :appDate, :ampm  => true,  :start_year => 2017,
-                                   :start_hour => 8, :end_hour => 17, :minute_step => 60, :order => [:year, :month, :day] %>
+      <br><b><%= app_form.label "Please select your desired appointment date and time:" %></b><br>
+
+    <div class="bootstrap">
+      <div class="container">
+        <div class="row">
+          <div class='col-sm-6'>
+            <div class="form-group">
+              <div class='input-group date' id='datetimepicker1'>
+                <%= app_form.text_field :appDate, id: :appointment_appDate, class: "form-control" %>
+                <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript">
+              $(function () {
+                  $('#datetimepicker1').datetimepicker(
+                      {widgetPositioning: {vertical: 'bottom'},
+                       stepping: 60,
+                       format: 'YYYY-MM-DD LT',
+                       disabledTimeIntervals: [ [ moment().hour(0), moment().hour(8).minutes(00) ],
+                           [ moment().hour(17).minutes(00), moment().hour(24) ] ],
+                       defaultDate: moment().hour(9).minutes(00)}
+
+                  );
+              });
+          </script>
+        </div>
+      </div>
     </div>
+
     </div>
+
     <br>
     <div class="field">
       <b><%= app_form.label "Enter a brief description of your problem (120 characters or less):" %></b><br>
@@ -142,3 +172,4 @@
     <%= form.submit "Book your appointment!" %>
   </div>
 <% end %>
+

@@ -12,7 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
+ *= require bootstrap-datetimepicker
  */
+
 body
 {
     background-image: url("cg_website-background1.jpg");

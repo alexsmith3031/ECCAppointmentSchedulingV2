@@ -8,7 +8,8 @@ class Vehicle < ApplicationRecord
   validates :make, length: {minimum: 2, maximum: 20}, :allow_blank => true
 
 
-  validates_format_of :make, :with => /\A[a-z]+\z/i, :allow_blank => true, message: (' cannot include numeric digits')
+  validates_format_of :make, :model, :with => /\A[a-z]+\z/i,
+                      :allow_blank => true, message: (' cannot include numeric digits or special characters.')
 
 
   validates :year, presence: true
