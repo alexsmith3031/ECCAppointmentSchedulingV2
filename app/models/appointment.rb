@@ -14,6 +14,10 @@ class Appointment < ApplicationRecord
 
     if appDate.present? && appDate <= Date.current
       errors.add(:Date, "cannot be set before the current date")
+    else if appDate.present? && appDate <= Time.current
+           errors.add(:Date, "cannot be set before the current time")
+
+         end
     end
     end
   end
