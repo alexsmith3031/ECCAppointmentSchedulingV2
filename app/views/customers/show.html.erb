@@ -42,6 +42,7 @@
 <% if current_user %>
 <strong><%= link_to 'Appointment Management Page', Customer %></strong>
 <% else %>
+    <strong>Does something look wrong? <%= link_to 'Click here to go back.', edit_customer_path(@customer) %></strong>
 <% end %>
 
 <p>
