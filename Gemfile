@@ -60,4 +60,3 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'bootstrap3-rails'
 
 gem 'rails_12factor', group: :production
-gem 'webpacker', require: false
